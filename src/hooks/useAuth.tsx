@@ -16,9 +16,13 @@ const getAuthenticatedUser = async () => {
 };
 
 const useAuth = () => {
-  const { data: user, isLoading } = useQuery(["getMe"], getAuthenticatedUser);
+  const {
+    data: user,
+    isLoading,
+    refetch,
+  } = useQuery(["auth"], getAuthenticatedUser);
 
-  return { user, isLoading };
+  return { user, isLoading, refetch };
 };
 
 export default useAuth;

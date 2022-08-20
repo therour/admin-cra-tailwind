@@ -1,6 +1,7 @@
 import { Route } from "react-router-dom";
 import { GuardRoute } from "./components/utils/GuardRoute";
 import Dashboard from "./views/Dashboard";
+import Login from "./views/Login";
 
 interface RouteObj {
   path?: string;
@@ -20,7 +21,7 @@ const routes: RouteObj[] = [
   {
     path: "/login",
     guest: true,
-    element: <div>Login Page</div>,
+    element: <Login />,
   },
 ];
 

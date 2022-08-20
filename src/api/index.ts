@@ -1,18 +1,28 @@
-import Axios from "axios";
+import { AxiosRequestConfig } from "axios";
 import { AuthUser } from "../types";
-
-const request = Axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-});
+import request from "./request";
 
 interface GetMeResponse {
   data: AuthUser;
 }
 
+interface LoginResponse {
+  data: AuthUser;
+  token: string;
+}
+
 const api = {
   auth: {
-    getMe() {
-      return request.get<GetMeResponse>("/v1/auth/me");
+    login(email: string, password: string, config?: AxiosRequestConfig) {
+      return request.post<LoginResponse>(
+        "/v1/auth/login",
+        { email, password },
+        config
+      );
+    },
+
+    getMe(config?: AxiosRequestConfig) {
+      return request.get<GetMeResponse>("/v1/auth/me", config);
     },
   },
 };
