@@ -21,7 +21,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(function InputF
                 </label>
             )}
             <Input id={elementId} isError={isError} required={required} {...rest} className="mt-1" ref={ref} />
-            {Boolean(isError && errorMessage) && <div className="text-danger-500 text-xs mt-1">{errorMessage}</div>}
+            {Boolean(isError && errorMessage) && <div className="mt-1 text-xs text-danger-500">{errorMessage}</div>}
         </div>
     )
 })

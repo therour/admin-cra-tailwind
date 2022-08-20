@@ -55,13 +55,13 @@ const Login = () => {
     })
 
     return (
-        <div className="min-h-screen grid grid-cols-1 md:grid-cols-2">
-            <div className="h-full bg-white flex">
+        <div className="grid min-h-screen grid-cols-1 md:grid-cols-2">
+            <div className="flex h-full bg-white">
                 <form
                     onSubmit={onSubmit}
-                    className="w-2/3 min-w-[320px] max-w-[420px] shadow-2xl rounded-lg p-6 border m-auto mt-12 sm:mt-20 md:mt-auto"
+                    className="m-auto mt-12 w-2/3 min-w-[320px] max-w-[420px] rounded-lg border p-6 shadow-2xl sm:mt-20 md:mt-auto"
                 >
-                    <h1 className="text-2xl mb-12">Hi, Welcome Back 😃</h1>
+                    <h1 className="mb-12 text-2xl">Hi, Welcome Back 😃</h1>
 
                     <div className="flex flex-col gap-6">
                         <InputField
@@ -82,13 +82,13 @@ const Login = () => {
                             errorMessage={errors.password?.message}
                         />
 
-                        <Button type="submit" color="primary" className="w-full mt-8" disabled={submitting}>
+                        <Button type="submit" color="primary" className="mt-8 w-full" disabled={submitting}>
                             {submitting ? "Submitting..." : "Login"}
                         </Button>
                     </div>
                 </form>
             </div>
-            <div className="h-full bg-black hidden md:block"></div>
+            <div className="hidden h-full bg-black md:block"></div>
         </div>
     )
 }
