@@ -5,7 +5,7 @@ import api from "../../api"
 import { isApiError, isApiValidationError } from "../../api/errors"
 import { Button } from "../../components/buttons"
 import { InputField } from "../../components/forms"
-import { useAbortController, useAuth } from "../../hooks"
+import { useAbortController } from "../../hooks"
 import { useAuthStore } from "../../stores/auth"
 
 type LoginFormValues = {
@@ -20,7 +20,6 @@ const Login = () => {
         setError,
         formState: { errors },
     } = useForm<LoginFormValues>()
-    const { refetch: revalidateAuthentication } = useAuth()
     const authenticateWithToken = useAuthStore((s) => s.authenticateWithToken)
     const [submitting, setSubmitting] = useState(false)
     const abortController = useAbortController()
@@ -34,7 +33,6 @@ const Login = () => {
             })
             const { data: user, token } = response.data
             authenticateWithToken(user, token)
-            revalidateAuthentication()
         } catch (err) {
             if (isApiError(err)) {
                 if (isApiValidationError(err)) {

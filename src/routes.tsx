@@ -14,9 +14,23 @@ interface RouteObj {
 
 const routes: RouteObj[] = [
     {
-        index: true,
+        // index: true,
         auth: true,
         element: <Dashboard />,
+        children: [
+            {
+                index: true,
+                element: <div>Home</div>,
+            },
+            {
+                path: "/rewards",
+                element: <div>Rewards</div>,
+            },
+            {
+                path: "/settings",
+                element: <div>Settings</div>,
+            },
+        ],
     },
     {
         path: "/login",

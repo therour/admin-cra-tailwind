@@ -16,9 +16,9 @@ const getAuthenticatedUser = async () => {
 }
 
 const useAuth = () => {
-    const { data: user, isLoading, refetch } = useQuery(["auth"], getAuthenticatedUser)
+    const { data: user, isLoading } = useQuery(["auth"], getAuthenticatedUser)
 
-    return { user, isLoading, refetch }
+    return { user, isLoading }
 }
 
 export default useAuth

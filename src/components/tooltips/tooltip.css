@@ -1,0 +1,29 @@
+.tooltip-box-arrow, .tooltip-box-arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+}
+
+.tooltip-box-arrow {
+    visibility: hidden;
+}
+
+.tooltip-box-arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg) skewX(-6deg);
+}
+
+.tooltip-box[data-placement^='top'] > .tooltip-box-arrow {
+    bottom: -4px;
+}
+.tooltip-box[data-placement^='bottom'] > .tooltip-box-arrow {
+    top: -4px;
+}
+.tooltip-box[data-placement^='left'] > .tooltip-box-arrow {
+    right: -4px;
+}
+.tooltip-box[data-placement^='right'] > .tooltip-box-arrow {
+    left: -4px;
+}
