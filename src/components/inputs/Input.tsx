@@ -3,6 +3,20 @@ import { forwardRef, InputHTMLAttributes } from "react"
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     isError?: boolean
+    type?:
+        | "date"
+        | "datetime-local"
+        | "email"
+        | "month"
+        | "number"
+        | "password"
+        | "range"
+        | "search"
+        | "tel"
+        | "text"
+        | "time"
+        | "url"
+        | "week"
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function Input({ className, isError, ...rest }, ref) {

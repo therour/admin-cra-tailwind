@@ -21,10 +21,6 @@ export const Tooltip: React.FC<TooltipProps> = forwardRef(function Tooltip(
         [placement],
     )
 
-    // if (disable) {
-    //     return <>{children}</>
-    // }
-
     const onMount: TippyProps["onMount"] = () => {
         scale.set(1)
         opacity.set(1)

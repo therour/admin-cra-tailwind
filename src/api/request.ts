@@ -4,7 +4,7 @@ import { authStore } from "../stores/auth"
 import { isApiError } from "./errors"
 
 const request = Axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+    baseURL: process.env.REACT_APP_API_URL,
     headers: {
         accept: "application/json",
         "Content-Type": "application/json",

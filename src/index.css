@@ -22,6 +22,6 @@
         @apply border-gray-300 focus:ring-primary-500 focus:border-primary-500 ;
     }
     .form-input-error {
-        @apply border-danger-500 focus:ring-danger-500 focus:border-danger-500 ;
+        @apply border-danger-500 focus:ring-danger-500 focus:border-danger-500 placeholder:text-danger-400 ;
     }
 }
